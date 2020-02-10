@@ -24,7 +24,6 @@ P_CLI_6=empty
 P_CLI_7=empty
 
 # script source
-#SCR_DNAME=/home/pi/dev/bsync
 SCR_DNAME=$BSYNC_SCR_PATH
 SCR_FNAME=bsync_cli.pl
 LOG_FNAME=output.log
@@ -37,11 +36,3 @@ MPV_SOCKET=/tmp/mpvsocket
 
 echo $STA_FULL
 
-#IFS='-'
-#read -ra ITEMS <<< "$HOSTNAME"
-#name=${ITEMS[1]}
-#eval V_FNAME=( \${V_FNAME_$name} );
-#echo $V_FNAME
-
-#V_FULL=$V_DNAME/$V_FNAME
-#echo $V_FULL

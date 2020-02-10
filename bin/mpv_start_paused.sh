@@ -47,45 +47,46 @@ echo "SCR:"$SCR_FULL
 
 # start looop
 while true; do
-  if [ "$(pidof mpv)" ]; then
-    #echo "MPV is running"
-    sleep 0.1
-  else
-    #echo "running MPV now"
-    mpv --pause $V_FULL --really-quiet --input-ipc-server=$MPV_SOCKET &
-    sleep 2
+	if [ "$(pidof mpv)" ]; then
+    		#echo "MPV is running"
+		sleep 0.1
+	else
+    		#echo "running MPV now"
+    		mpv --pause $V_FULL --really-quiet --input-ipc-server=$MPV_SOCKET &
+    		sleep 2
    
-    if [ "$BSYNC_MOD" == "a" ] && [ "$BSYNC_RUN" == "r" ]; then
-      bsync_pi=`ps -ef | grep -v grep | grep -v vim | grep $SCR_FNAME | awk '{print $2}'`
-      if [ "$bsync_pi" ]; then
-        #    #echo "client running"
-        sleep 0.1;
-      else
-       if [ "$BSYNC_LOG" == "r" ]; then
-         $SCR_FULL $P_NAME $V_FNAME 2>&1 | tee $LOG_FULL &
-       fi
-       if [ "$BSYNC_LOG" == "n" ]; then
-	 $SCR_FULL $P_NAME $V_NAME &
-      fi
-    fi
+    		if [ "$BSYNC_MOD" == "a" ] && [ "$BSYNC_RUN" == "r" ]; then
+      			bsync_pi=`ps -ef | grep -v grep | grep -v vim | grep $SCR_FNAME | awk '{print $2}'`
+      			if [ "$bsync_pi" ]; then
+        			#    #echo "client running"
+        			sleep 0.1;
+      			else
+       				if [ "$BSYNC_LOG" == "r" ]; then
+         				$SCR_FULL $P_NAME $V_FNAME 2>&1 | tee $LOG_FULL &
+       				fi
+       				if [ "$BSYNC_LOG" == "n" ]; then
+	 				$SCR_FULL $P_NAME $V_NAME &
+      				fi
+    			fi
   
-  fi
-  
-  # if run set to run
-  if [ "$BSYNC_MOD" == "m" ] && [ "$BSYNC_RUN" == "r" ]; then
-    bsync_pi=`ps -ef | grep -v grep | grep -v vim | grep $SCR_FNAME | awk '{print $2}'`
-    if [ "$bsync_pi" ]; then
-      #    #echo "client running"
-      sleep 0.1;
-    else
-     if [ "$BSYNC_LOG" == "r" ]; then
-       $SCR_FULL $P_NAME $V_FNAME 2>&1 | tee $LOG_FULL &
-     fi
-     if [ "$BSYNC_LOG" == "n" ]; then
-       $SCR_FULL $P_NAME $V_NAME &
-     fi
-    fi
-  fi
+  		fi
+  	fi
+
+  	# if run set to run
+  	if [ "$BSYNC_MOD" == "m" ] && [ "$BSYNC_RUN" == "r" ]; then
+    		bsync_pi=`ps -ef | grep -v grep | grep -v vim | grep $SCR_FNAME | awk '{print $2}'`
+    		if [ "$bsync_pi" ]; then
+      			#    #echo "client running"
+      			sleep 0.1;
+    		else
+     			if [ "$BSYNC_LOG" == "r" ]; then
+       				$SCR_FULL $P_NAME $V_FNAME 2>&1 | tee $LOG_FULL &
+     			fi
+     			if [ "$BSYNC_LOG" == "n" ]; then
+       				$SCR_FULL $P_NAME $V_NAME &
+     			fi
+    		fi
+  	fi
 
 done  
 

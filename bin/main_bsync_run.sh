@@ -10,8 +10,8 @@ fi
 
 
 # client configuration
-export BSYNC_SCR_PATH=$BSYNC_RUN_PATH"/dev/bsync"
-export BSYNC_BIN_PATH=$BSYNC_RUN_PATH"/bin"
+export BSYNC_SCR_PATH=$BSYNC_RUN_PATH"/dev/bsync_cli"
+export BSYNC_BIN_PATH=$BSYNC_RUN_PATH"/dev/bsync_cli/bin"
 export BSYNC_BIN_RUN="mpv_start_paused.sh"
 logger -i -t BSYNC "PREFIX: "$BSYNC_PREFIX" MOD:"$BSYNC_RUN$BSYNC_MOD$BSYNC_LOG
 
