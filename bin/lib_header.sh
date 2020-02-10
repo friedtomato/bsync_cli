@@ -21,7 +21,7 @@ P_CLI_3=empty
 P_CLI_4=optoma
 P_CLI_5=empty
 P_CLI_6=empty
-P_CLI_7=empty
+P_CLI_7=sharp_4
 
 # script source
 SCR_DNAME=$BSYNC_SCR_PATH
