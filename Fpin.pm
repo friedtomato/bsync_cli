@@ -57,12 +57,29 @@ sub init_li_pin {
 }
 
 sub up_li_pin {
+	my $ret = "";
+	if(!defined($PIN21)){
+		$ret = "P21[NOK]";
+	}
+	else{
+		$ret = "P21[OK]";
+	}
 	$PIN21->write(HIGH);
+	return $ret;
 }
 
 sub down_li_pin {
+	my $ret = "";
+	if(!defined($PIN21)){
+		$ret = "P21[OK]";
+	}
+	else{
+		$ret = "P21[OK]";
+	}
 	$PIN21->write(LOW);
+	return $ret;
 }
+
 
 sub up_hs_pin {
   my $ret = "";
