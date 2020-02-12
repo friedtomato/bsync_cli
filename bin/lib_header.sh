@@ -7,12 +7,12 @@ S_OUTPUT=jack
 V_DNAME=/home/pi/video/$S_OUTPUT
 # video files per client
 V_FNAME_1=test.mp4
-V_FNAME_2=videoplayback.mp4
-V_FNAME_3=videoplayback.mp4
-V_FNAME_4=videoplayback.mp4
-V_FNAME_5=videoplayback.mp4
-V_FNAME_6=videoplayback.mp4
-V_FNAME_7=videoplayback.mp4
+V_FNAME_2=final.mov
+V_FNAME_3=final.mov
+V_FNAME_4=final.mov
+V_FNAME_5=final.mov
+V_FNAME_6=final.mov
+V_FNAME_7=final.mov
 
 # projectors connected to the clients
 P_CLI_1=test_1
