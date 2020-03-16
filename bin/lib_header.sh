@@ -16,8 +16,8 @@ V_FNAME_7=final.mov
 
 # projectors connected to the clients
 P_CLI_1=test_1
-P_CLI_2=benq_741
-P_CLI_3=empty
+P_CLI_2=benq_611c
+P_CLI_3=optoma
 P_CLI_4=optoma
 P_CLI_5=empty
 P_CLI_6=empty
