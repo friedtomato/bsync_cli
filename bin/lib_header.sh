@@ -8,7 +8,7 @@ V_DNAME=/home/pi/video/$S_OUTPUT
 # video files per client
 V_FNAME_1=test.mp4
 V_FNAME_2=final.mov
-V_FNAME_3=dip_white_02m.mov
+V_FNAME_3=dip_scrtest_02m.mov
 V_FNAME_4=final.mov
 V_FNAME_5=final.mov
 V_FNAME_6=final.mov
