@@ -142,6 +142,7 @@ my $identified = 0;
   # init of te pins for LED and heat sensor
   Fpin::init_hs_pin(0);
   Fpin::init_li_pin(0);
+  Fpin::init_fa_pin(0);
 
   while(!$END_OF_THE_LINE){
 	  $line_loop_count++;
@@ -347,6 +348,24 @@ my $identified = 0;
 				  $pin_status = $ret;
 				  Flog::item_flog("S=$session_loop_count|LCO=$last_command|COM=$command|CHI=$ncom|VOL=$volume|FLM=$FI_NAME|FPO=$film_pos/$film_dur|PIN=$pin_status|PST=$prj_status|PRE=$prj_return|PNA=$PR_NAME:$command($ret)");
 				  #Fpin::del_hs_pin();
+				  $last_command = $command;
+			  }
+			  # pin down (relay - fan)
+			  elsif (($command eq "pinupf") and ($run_here)){
+				  #Fpin::init_fa_pin(0);
+				  my $ret = Fpin::up_fa_pin();
+				  $pin_status = $ret;
+				  Flog::item_flog("S=$session_loop_count|LCO=$last_command|COM=$command|CHI=$ncom|VOL=$volume|FLM=$FI_NAME|FPO=$film_pos/$film_dur|PIN=$pin_status|PST=$prj_status|PRE=$prj_return|PNA=$PR_NAME:$command($ret)");
+				  #Fpin::del_fa_pin();
+				  $last_command = $command;
+			  }
+			  # pin down (relay - fan)
+			  elsif (($command eq "pindownf") and ($run_here)){
+				  #Fpin::init_fa_pin(0);
+				  my $ret = Fpin::down_fa_pin();
+				  $pin_status = $ret;
+				  Flog::item_flog("S=$session_loop_count|LCO=$last_command|COM=$command|CHI=$ncom|VOL=$volume|FLM=$FI_NAME|FPO=$film_pos/$film_dur|PIN=$pin_status|PST=$prj_status|PRE=$prj_return|PNA=$PR_NAME:$command($ret)");
+				  #Fpin::del_fa_pin();
 				  $last_command = $command;
 			  }
 			  # quit the session cycle

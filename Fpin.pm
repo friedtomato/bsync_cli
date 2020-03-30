@@ -6,9 +6,11 @@ use RPi::Const qw(:all);
 my $HS_PIN18 = 18;
 my $HS_PIN23 = 23;
 my $LI_PIN21 = 21;
+my $FA_PIN12 = 12;
 my $PIN18;
 my $PIN23;
 my $PIN21;
+my $PIN12;
 
 
 sub init_hs_pin {
@@ -56,6 +58,49 @@ sub init_li_pin {
 	return $ret;
 }
 
+sub init_fa_pin {
+	my ($init_value) = @_;
+	my $pin = RPi::Pin->new($FA_PIN12);
+	my $ret = "";
+	if(!defined($pin)){
+		print "cannot initiate PIN($FA_PIN12): $!";
+		$ret = "PIN12[NOK]";
+	}
+	else{
+		$ret = "PIN12[OK]";
+	}
+	$pin->mode(OUTPUT);
+	$pin->write($init_value);
+	$PIN12 = $pin;
+	return $ret;
+}
+
+
+sub up_fa_pin {
+	my $ret = "";
+	if(!defined($PIN12)){
+		$ret = "P12[NOK]";
+	}
+	else{
+		$ret = "P12[OK]";
+	}
+	$PIN12->write(HIGH);
+	return $ret;
+}
+
+sub down_fa_pin {
+	my $ret = "";
+	if(!defined($PIN12)){
+		$ret = "P12[NOK]";
+	}
+	else{
+		$ret = "P12[OK]";
+	}
+	$PIN12->write(LOW);
+	return $ret;
+}
+
+
 sub up_li_pin {
 	my $ret = "";
 	if(!defined($PIN21)){
@@ -71,7 +116,7 @@ sub up_li_pin {
 sub down_li_pin {
 	my $ret = "";
 	if(!defined($PIN21)){
-		$ret = "P21[OK]";
+		$ret = "P21[NOK]";
 	}
 	else{
 		$ret = "P21[OK]";
