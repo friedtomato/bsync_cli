@@ -14,6 +14,7 @@ V_FNAME_5=dip_white_02m.mov
 V_FNAME_6=dip_white_02m.mov
 V_FNAME_7=dip_white_02m.mov
 V_FNAME_8=dip_white_02m.mov
+V_FNAME_9=dip_white_02m.mov
 
 # projectors connected to the clients
 P_CLI_1=test_1
@@ -24,6 +25,7 @@ P_CLI_5=optoma
 P_CLI_6=benq_611c
 P_CLI_7=benq_611c
 P_CLI_8=benq_611c
+P_CLI_9=panasonic
 
 # script source
 SCR_DNAME=$BSYNC_SCR_PATH
